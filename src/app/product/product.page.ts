@@ -18,8 +18,7 @@ export class ProductPage implements OnInit {
   ngOnInit() {
     this.titleName = 'รายการอาหาร';
     this.productName = 'ข้าวกะเพรา';
-    this.buttonName = 'ราคา';
-    
+    this.buttonName = 'ราคา';  
   } 
   async presentAlert(){
     const alert = await this.alertController.create({

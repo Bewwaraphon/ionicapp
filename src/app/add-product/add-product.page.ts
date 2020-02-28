@@ -67,7 +67,7 @@ export class AddProductPage implements OnInit {
   async alerterror(data: any) {
     const alert = await this.alertController.create({
       header: 'คำเตือน',
-      message: 'data',
+      message: data,
       buttons: ['OK']
     });
     await alert.present();

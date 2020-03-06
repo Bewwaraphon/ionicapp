@@ -11,12 +11,13 @@
     </ion-card-header>
 
     <ion-card-content>
-      <ion-item *ngFor= "let data of profiles">{{ data.name }} {{data.lastname }} {{data.detail}}
-      
+      <ion-item *ngFor= "let data of profiles">
+        {{ data.name }} {{data.lastname }} {{data.detail}}
       <ion-button color= "danger" (click) = "delete_data(data.id)">x</ion-button>
-      
-
       </ion-item>
   </ion-card-content>
   </ion-card>
+
+  <ion-button color="success" (click)="loaddata()">Loaddata</ion-button>
+
   </ion-content>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import axios from 'axios';
 
 
 @Component({
@@ -12,6 +13,10 @@ export class ProductPage implements OnInit {
   titleName: string;
   productName: string;
   buttonName: string;
+
+  input_titleName: string;
+  input_productName: string;
+  input_buttonName: string;
 
   constructor( public alertController: AlertController ) { }
 

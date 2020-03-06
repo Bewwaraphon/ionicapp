@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from "@ionic/angular";
 import axios from 'axios';
-import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-add-product',
@@ -22,16 +22,52 @@ export class AddProductPage implements OnInit {
   async addproduct() {
 
     if (this.productid === undefined) {
-      this.alerterror('กรุณากรอกข้อมูลรหัสสินค้า');
+      // console.log('กรุณากรอกรหัสสินค้า');
+
+      this.alerterror('กรุณากรอกรหัสสินค้า');
+
+        // const alert = await this.alertController.create({
+        //   header: 'คำเตือน',
+        //   message: 'กรุณากรอกรหัสสินค้า',
+        //   buttons: ['OK']
+        // });
+        // await alert.present();
+     
 
     } else if (this.productname === undefined) {
-      this.alerterror('กรุณากรอกข้อมูลชื่อสินค้า');
+      // console.log('กรุณากรอกชื่อสินค้า');
 
+      this.alerterror('กรุณากรอกชื่อสินค้า');
+      
+      // const alert = await this.alertController.create({
+      //   header: 'คำเตือน',
+      //   message: 'กกรุณากรอกชื่อสินค้า',
+      //   buttons: ['OK']
+      // });
+      // await alert.present();
+   
     } else if (this.productprice === undefined) {
-      this.alerterror('กรุณากรอกข้อมูลราคาสินค้า');
+      // console.log('กรุณากรอกราคาสินค้า');
 
+      this.alerterror('กรุณากรอกราคาสินค้า');
+      // const alert = await this.alertController.create({
+      //   header: 'คำเตือน',
+      //   message: 'กรุณากรอกราคาสินค้า',
+      //   buttons: ['OK']
+      // });
+      // await alert.present();
+   
     } else if (this.productdetail === undefined) {
+      // console.log('กรุณากรอกรายละเอียดราคาสินค้า');
+
       this.alerterror('กรุณากรอกรายละเอียดสินค้า');
+      // const alert = await this.alertController.create({
+      //   header: 'คำเตือน',
+      //   message: 'กรุณากรอกรายละเอียดราคาสินค้า',
+      //   buttons: ['OK']
+      // });
+      // await alert.present();
+     
 
     } else {
       axios.post('http://localhost/ionicserver/add_product.php', {
@@ -57,13 +93,11 @@ export class AddProductPage implements OnInit {
   async savesuccess() {
     const alert = await this.alertController.create({
       header: 'สำเร็จ',
-      message: 'บันทึกข้อมูลสำเร็จ',
+      message: 'บันทึกข้อูลสำเร็จ',
       buttons: ['OK']
     });
     await alert.present();
-
   }
-
   async alerterror(data: any) {
     const alert = await this.alertController.create({
       header: 'คำเตือน',
@@ -71,6 +105,6 @@ export class AddProductPage implements OnInit {
       buttons: ['OK']
     });
     await alert.present();
-
   }
+  
 }
